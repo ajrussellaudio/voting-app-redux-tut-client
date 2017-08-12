@@ -1,14 +1,14 @@
 module.exports = {
   entry: ["./src/index.js"],
   module: {
-    loaders: {
+    loaders: [{
       test: /\.jsx?$/,
       exclude: /node_modules/,
-      loader: "babel"
-    }
+      loader: "babel-loader"
+    }]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['.js', '.jsx']
   },
   output: {
     path: __dirname + '/dist',
@@ -17,5 +17,6 @@ module.exports = {
   },
   devServer: {
     contentBase: "./dist"
-  }
+  },
+  devtool: "source-map"
 }
